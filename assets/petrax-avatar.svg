@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Petrax Consulting avatar</title>
+  <desc id="desc">A premium navy and turquoise geometric P monogram inspired by the Petrax Consulting logo.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14284b"/>
+      <stop offset="1" stop-color="#09172e"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a4e0e5"/>
+      <stop offset="1" stop-color="#6cb7c5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#2e547b" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#14284b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+  <circle cx="256" cy="238" r="190" fill="url(#glow)"/>
+  <rect x="91" y="91" width="330" height="330" rx="30" fill="none" stroke="#ffffff" stroke-opacity=".1" stroke-width="2"/>
+  <path d="M174 365V147h147c22 0 35 13 35 35v74c0 22-13 35-35 35H220" fill="none" stroke="url(#mark)" stroke-width="31" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M174 365v-74h147" fill="none" stroke="url(#mark)" stroke-width="31" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M220 365h118" fill="none" stroke="#ffffff" stroke-opacity=".88" stroke-width="19" stroke-linecap="round"/>
+  <circle cx="377" cy="377" r="9" fill="#a4e0e5"/>
+</svg>
