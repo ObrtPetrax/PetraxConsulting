@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Petrax monogram avatar</title>
+  <desc id="desc">A premium square Petrax P monogram in light teal on a deep navy background.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b3156"/>
+      <stop offset="1" stop-color="#09162b"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a6dfe4"/>
+      <stop offset="1" stop-color="#73bdc8"/>
+    </linearGradient>
+    <radialGradient id="soft-glow" cx="50%" cy="42%" r="58%">
+      <stop offset="0" stop-color="#3a6385" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#193451" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+  <circle cx="256" cy="230" r="205" fill="url(#soft-glow)"/>
+  <rect x="72" y="72" width="368" height="368" rx="82" fill="none" stroke="#ffffff" stroke-opacity=".1" stroke-width="2"/>
+  <path d="M174 357V155H348V278H211V357" fill="none" stroke="url(#teal)" stroke-width="30" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M211 357H348V278" fill="none" stroke="url(#teal)" stroke-width="30" stroke-linecap="square" stroke-linejoin="round"/>
+  <circle cx="390" cy="390" r="7" fill="#a6dfe4" fill-opacity=".85"/>
+</svg>
