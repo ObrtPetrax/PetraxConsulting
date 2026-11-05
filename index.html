@@ -9,7 +9,6 @@
   <style>
     :root {
       --navy: #0d1f36;
-      --navy-2: #16355b;
       --blue: #2d7ff9;
       --sky: #eaf4ff;
       --text: #1c2b3d;
@@ -51,12 +50,7 @@
     .brand { display: inline-flex; align-items: center; padding: 10px 0; }
     .brand img { display: block; width: min(260px, 48vw); height: auto; object-fit: contain; }
     nav { display: flex; align-items: center; gap: 28px; }
-    nav a {
-      color: #172449;
-      font-weight: 600;
-      font-size: 0.96rem;
-      transition: color 0.2s ease;
-    }
+    nav a { color: #172449; font-weight: 600; font-size: 0.96rem; transition: color 0.2s ease; }
     nav a:hover { color: #80c4d0; }
 
     .hero {
@@ -115,26 +109,8 @@
     .button.primary { background: var(--blue); color: var(--white); box-shadow: 0 12px 26px rgba(45, 127, 249, 0.28); }
     .button.secondary { background: rgba(255, 255, 255, 0.08); color: var(--white); border: 1px solid rgba(255, 255, 255, 0.15); }
     .button.whatsapp { background: #168b52; color: white; }
-    .hero-card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-    }
-    .mini-label {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #dfeafb;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
+    .hero-card { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); backdrop-filter: blur(12px); }
+    .mini-label { display: inline-block; margin-bottom: 18px; padding: 8px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); color: #dfeafb; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
     .stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
     .stat { padding: 18px 16px; border-radius: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.09); }
     .stat strong { display: block; font-size: 1.6rem; color: var(--white); margin-bottom: 4px; }
@@ -146,20 +122,9 @@
     .heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
     .heading .eyebrow { color: var(--blue); }
     .heading h2 { font-size: clamp(2.1rem, 3vw, 3rem); color: var(--navy); }
-    .section-dark .heading h2 { color: var(--white); }
     .services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
     .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 24px; }
-    .card-number {
-      display: inline-grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      background: var(--sky);
-      color: var(--blue);
-      border-radius: 12px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
+    .card-number { display: inline-grid; place-items: center; width: 42px; height: 42px; background: var(--sky); color: var(--blue); border-radius: 12px; font-weight: 800; margin-bottom: 16px; }
     .card h3 { color: var(--navy); font-size: 1.35rem; margin-bottom: 10px; }
     .card p { margin: 0; color: var(--muted); font-size: 1rem; }
     .about { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
@@ -170,23 +135,11 @@
     .contact-block p { color: #d6e7ff; margin: 0 0 18px; }
     .contact-form { display: grid; gap: 14px; max-width: 620px; margin: 28px auto; text-align: left; }
     .contact-form label { display: grid; gap: 6px; color: #e7effd; font-weight: 600; }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 9px;
-      background: rgba(255,255,255,.08);
-      color: #fff;
-      font: inherit;
-    }
-    .contact-form input::placeholder, .contact-form textarea::placeholder { color: #c4d2e3; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 13px 14px; border: 1px solid rgba(255,255,255,.25); border-radius: 9px; background: rgba(255,255,255,.08); color: #fff; font: inherit; }
     .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .footer { background: #081827; color: #aac0d9; padding: 28px 0; text-align: center; font-size: 0.94rem; }
 
-    @keyframes rise-in {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
     .hero h1, .hero p, .hero .actions { animation: rise-in .7s ease-out both; }
     .hero p { animation-delay: .12s; }
     .hero .actions { animation-delay: .22s; }
@@ -230,23 +183,19 @@
         <div>
           <p class="eyebrow">Petrax · poslovna rješenja</p>
           <h1>Unaprijedite poslovanje uz pametna digitalna rješenja</h1>
-          <p>
-            Pomažemo tvrtkama optimizirati procese, ostvariti povrat trošarina
-            i odabrati tehnologiju koja odgovara njihovim potrebama.
-          </p>
+          <p>Pomažemo tvrtkama optimizirati procese, ostvariti povrat trošarina i odabrati tehnologiju koja odgovara njihovim potrebama.</p>
           <div class="actions">
             <a href="#kontakt" class="button primary">Dogovorite konzultacije</a>
             <a href="#usluge" class="button secondary">Istražite usluge</a>
           </div>
         </div>
-
         <div class="hero-card">
           <span class="mini-label">Usluge</span>
           <div class="stat-grid">
             <div class="stat"><strong>01</strong><span>Poslovno savjetovanje</span></div>
             <div class="stat"><strong>02</strong><span>Povrat trošarina</span></div>
-            <div class="stat"><strong>03</strong><span>Fiskalne blagajne</span></div>
-            <div class="stat"><strong>04</strong><span>Stax POS terminali</span></div>
+            <div class="stat"><strong>03</strong><span>Fiskalne blagajne i POS terminali</span></div>
+            <div class="stat"><strong>04</strong><span>DMS rješenja</span></div>
           </div>
         </div>
       </div>
@@ -258,7 +207,6 @@
           <p class="eyebrow">Naše usluge</p>
           <h2>Rješenja prilagođena vašim poslovnim potrebama</h2>
         </div>
-
         <div class="services-grid">
           <article class="card">
             <div class="card-number">01</div>
@@ -272,16 +220,11 @@
           </article>
           <article class="card">
             <div class="card-number">03</div>
-            <h3>Fiskalne blagajne</h3>
-            <p>Nudimo sigurna i učinkovita rješenja za fiskalizaciju i modernizaciju prodajnih procesa.</p>
+            <h3>Fiskalne blagajne i POS terminali</h3>
+            <p>Nudimo rješenja za fiskalizaciju te Stax POS terminale za brzo, jednostavno i sigurno kartično plaćanje.</p>
           </article>
           <article class="card">
             <div class="card-number">04</div>
-            <h3>Stax POS terminali</h3>
-            <p>Omogućujemo jednostavno, brzo i sigurno kartično plaćanje uz Stax POS terminale za vaše poslovanje.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">05</div>
             <h3>Digitalno upravljanje dokumentima</h3>
             <p>Uvodimo DMS sustave koji omogućuju brzu pretragu, bolju organizaciju i sigurnost poslovnih dokumenata.</p>
           </article>
@@ -309,14 +252,12 @@
         <p class="eyebrow">Kontakt</p>
         <h2>Razgovarajmo o vašem poslovanju</h2>
         <p>Pošaljite nam upit ili nas nazovite. Rado ćemo razgovarati o rješenjima prilagođenima vašim potrebama.</p>
-
         <form class="contact-form" id="contact-form">
           <label>Vaše ime ili naziv tvrtke<input name="name" type="text" autocomplete="name" required></label>
           <label>E-mail adresa<input name="email" type="email" autocomplete="email" required></label>
           <label>Poruka<textarea name="message" rows="5" required></textarea></label>
           <button class="button primary" type="submit">Pripremi e-mail</button>
         </form>
-
         <div class="contact-actions">
           <a class="button secondary" href="mailto:obrt.petrax@gmail.com">obrt.petrax@gmail.com</a>
           <a class="button secondary" href="tel:+385916650233">+385 91 6650 233</a>
@@ -326,9 +267,7 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">© 2026 Petrax.hr. Sva prava pridržana.</div>
-  </footer>
+  <footer class="footer"><div class="container">© 2026 Petrax.hr. Sva prava pridržana.</div></footer>
 
   <script>
     document.getElementById("contact-form").addEventListener("submit", function (event) {
