@@ -1,1 +1,675 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Petrax pruža poslovno savjetovanje, povrat trošarina i digitalna rješenja za poslovanje." />
+  <meta name="theme-color" content="#0d1f36" />
+  <title>Petrax | Poslovno savjetovanje i digitalna rješenja</title>
+  <style>
+    :root {
+      --navy: #0d1f36;
+      --navy-2: #16355b;
+      --blue: #2d7ff9;
+      --sky: #eaf4ff;
+      --text: #1c2b3d;
+      --muted: #5a6b80;
+      --white: #ffffff;
+      --line: #e5edf7;
+      --shadow: 0 20px 50px rgba(13, 31, 54, 0.09);
+      --radius: 18px;
+    }
 
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f6f9fc;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid #e5edf7;
+      box-shadow: 0 4px 18px rgba(13, 31, 54, 0.06);
+    }
+
+    .topbar-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .brand img {
+      display: block;
+      width: min(260px, 48vw);
+      height: auto;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #172449;
+      font-weight: 600;
+      font-size: 0.96rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #80c4d0;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(13, 31, 54, .96), rgba(13, 31, 54, .72)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=85") center / cover no-repeat;
+      color: var(--white);
+      padding: 110px 0 100px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -140px;
+      bottom: -180px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 0 0 60px rgba(255, 255, 255, 0.02),
+        0 0 0 120px rgba(255, 255, 255, 0.015);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: #afdcff;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 18px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.6rem);
+      max-width: 760px;
+    }
+
+    .hero p {
+      margin: 0 0 30px;
+      color: #dfeafb;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      max-width: 670px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 12px 26px rgba(45, 127, 249, 0.28);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .button.whatsapp {
+      background: #168b52;
+      color: white;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .mini-label {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #dfeafb;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 18px 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: #d8e8ff;
+      font-size: 0.9rem;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-light {
+      background: #f6f9fc;
+    }
+
+    .section-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .heading {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .heading .eyebrow {
+      color: var(--blue);
+    }
+
+    .heading h2 {
+      font-size: clamp(2.1rem, 3vw, 3rem);
+      color: var(--navy);
+    }
+
+    .section-dark .heading h2 {
+      color: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+    }
+
+    .card-number {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      background: var(--sky);
+      color: var(--blue);
+      border-radius: 12px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-box h3 {
+      color: var(--navy);
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .contact-block {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .contact-block p {
+      color: #d6e7ff;
+      margin: 0 0 18px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 24px;
+      margin: 24px 0 22px;
+    }
+
+    .contact-links a {
+      color: #b8d8ff;
+      font-weight: 700;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      max-width: 620px;
+      margin: 28px auto;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 6px;
+      color: #e7effd;
+      font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 9px;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      font: inherit;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #c4d2e3;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .footer {
+      background: #081827;
+      color: #aac0d9;
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1,
+    .hero p,
+    .hero .actions {
+      animation: rise-in .7s ease-out both;
+    }
+
+    .hero p { animation-delay: .12s; }
+    .hero .actions { animation-delay: .22s; }
+
+    @media (max-width: 820px) {
+      nav {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-inner,
+      .about,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .brand img { width: min(220px, 64vw); }
+      .hero { padding-top: 80px; }
+    }
+
+    @media (max-width: 560px) {
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#pocetna" class="brand" aria-label="Petrax Consulting – početna stranica">
+        <img src="logo.JPG" alt="Petrax Consulting" />
+      </a>
+      <nav aria-label="Glavna navigacija">
+        <a href="#pocetna">Početna</a>
+        <a href="#usluge">Usluge</a>
+        <a href="#o-nama">O nama</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="pocetna">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Petrax · poslovna rješenja</p>
+          <h1>Unaprijedite poslovanje uz pametna digitalna rješenja</h1>
+          <p>
+            Pomažemo tvrtkama optimizirati procese, ostvariti povrat trošarina
+            i odabrati tehnologiju koja odgovara njihovim potrebama.
+          </p>
+          <div class="actions">
+            <a href="#kontakt" class="button primary">Dogovorite konzultacije</a>
+            <a href="#usluge" class="button secondary">Istražite usluge</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <span class="mini-label">Usluge</span>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>01</strong>
+              <span>Poslovno savjetovanje</span>
+            </div>
+            <div class="stat">
+              <strong>02</strong>
+              <span>Povrat trošarina</span>
+            </div>
+            <div class="stat">
+              <strong>03</strong>
+              <span>Fiskalne blagajne</span>
+            </div>
+            <div class="stat">
+              <strong>04</strong>
+              <span>DMS rješenja</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="usluge">
+      <div class="container">
+        <div class="heading">
+          <p class="eyebrow">Naše usluge</p>
+          <h2>Rješenja prilagođena vašim poslovnim potrebama</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Poslovno savjetovanje</h3>
+            <p>
+              Analiziramo vaše procese, identificiramo izazove i
+              razvijamo strategije za stabilan rast i veću
+              profitabilnost.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Povrat trošarina prijevoznicima</h3>
+            <p>
+              Pomažemo pojednostaviti i ubrzati postupak povrata
+              trošarina na gorivo za domaće i međunarodne prijevoznike.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>Fiskalne blagajne i POS</h3>
+            <p>
+              Nudimo sigurna i učinkovita rješenja za fiskalizaciju,
+              kartično plaćanje i modernizaciju prodajnih procesa.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">04</div>
+            <h3>Digitalno upravljanje dokumentima</h3>
+            <p>
+              Uvodimo DMS sustave koji omogućuju brzu pretragu,
+              bolju organizaciju i sigurnost poslovnih dokumenata.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="o-nama">
+      <div class="container about">
+        <div class="about-box">
+          <h3>Zašto Petrax?</h3>
+          <p>
+            U Petraxu kombiniramo poslovno znanje, digitalnu
+            transformaciju i praktične savjete koji pomažu tvrtkama
+            djelovati učinkovitije i održivije.
+          </p>
+          <p>
+            Naš fokus je na poslovnim rezultatima: jasno definirane
+            procese, jednostavne tehnologije i rješenja koja donose
+            vrijednost.
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3>Naš pristup</h3>
+          <p>
+            Svako rješenje kreiramo uz razumijevanje vašeg poslovanja,
+            specifičnih potreba i ciljeva razvoja.
+          </p>
+          <p>
+            Pružamo podršku od analize i planiranja do implementacije i
+            održavanja, uvijek s ciljem povećanja poslovne efikasnosti.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="kontakt">
+      <div class="container contact-block">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Razgovarajmo o vašem poslovanju</h2>
+        <p>
+          Pošaljite nam upit ili nas nazovite. Rado ćemo razgovarati o
+          rješenjima prilagođenima vašim potrebama.
+        </p>
+
+        <form class="contact-form" id="contact-form">
+          <label>
+            Vaše ime ili naziv tvrtke
+            <input name="name" type="text" autocomplete="name" required>
+          </label>
+          <label>
+            E-mail adresa
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <label>
+            Poruka
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="button primary" type="submit">Pripremi e-mail</button>
+        </form>
+
+        <div class="contact-actions">
+          <a class="button secondary" href="mailto:obrt.petrax@gmail.com">
+            obrt.petrax@gmail.com
+          </a>
+          <a class="button secondary" href="tel:+385916650233">
+            +385 91 6650 233
+          </a>
+          <a
+            class="button whatsapp"
+            href="https://wa.me/385916650233"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pošaljite WhatsApp poruku
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Petrax.hr. Sva prava pridržana.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = new FormData(event.currentTarget);
+      const subject = "Upit s web-stranice Petrax";
+      const body = [
+        `Ime / tvrtka: ${form.get("name")}`,
+        `E-mail: ${form.get("email")}`,
+        "",
+        "Poruka:",
+        form.get("message")
+      ].join("\n");
+
+      window.location.href = `mailto:obrt.petrax@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>
