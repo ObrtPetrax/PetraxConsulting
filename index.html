@@ -309,11 +309,11 @@
         <h2>Razgovarajmo o vašem poslovanju</h2>
         <p>Pošaljite nam upit ili nas nazovite. Rado ćemo razgovarati o rješenjima prilagođenima vašim potrebama.</p>
 
-        <form class="contact-form" id="contact-form">
-          <label>Vaše ime ili naziv tvrtke<input name="name" type="text" autocomplete="name" required></label>
-          <label>E-mail adresa<input name="email" type="email" autocomplete="email" required></label>
+        <form class="contact-form" action="https://formspree.io/f/xgaaqgbk" method="POST">
+          <label>Vaše ime ili naziv tvrtke<input type="text" name="name" autocomplete="name" required></label>
+          <label>E-mail adresa<input type="email" name="email" autocomplete="email" required></label>
           <label>Poruka<textarea name="message" rows="5" required></textarea></label>
-          <button class="button primary" type="submit">Pripremi e-mail</button>
+          <button class="button primary" type="submit">Pošalji upit</button>
         </form>
 
         <div class="contact-actions">
@@ -342,29 +342,21 @@
 
           <h3>Vanjske usluge</h3>
           <p>Stranica učitava pozadinsku fotografiju s Unsplasha, čiji se poslužitelji mogu obratiti pregledniku prilikom učitavanja stranice. Klikom na WhatsApp poveznicu otvara se usluga WhatsAppa. Te usluge mogu obrađivati tehničke podatke prema vlastitim pravilima privatnosti.</p>
+
+          <h3>Politika privatnosti</h3>
+          <p>Poštujemo vašu privatnost i odgovorno postupamo s osobnim podacima koje nam dostavite. Ova politika objašnjava kako prikupljamo, koristimo i čuvamo informacije koje nam dostavite putem web-stranice ili e-pošte.</p>
+          <p><strong>Voditelj obrade podataka:</strong> PETRAX, obrt za usluge i trgovinu. Za sva pitanja vezana uz privatnost i obradu podataka možete nas kontaktirati na e-mail adresi: obrt.petrax@gmail.com</p>
+          <p><strong>Vrste podataka:</strong> Ako nam pošaljete e-mail, obrađujemo podatke koje ste naveli u poruci, primjerice ime, adresu e-pošte i sadržaj upita. GitHub kao pružatelj hostinga može automatski bilježiti tehničke podatke o posjetu, primjerice IP adresu, vrstu preglednika i vrijeme pristupa, u skladu sa svojom politikom privatnosti.</p>
+          <p><strong>Svrha obrade:</strong> Vaše podatke obrađujemo isključivo u svrhu odgovaranja na upite i komunikacije s vama, pružanja usluga i informacija koje tražite te ispunjavanja zakonskih i poslovnih obveza.</p>
+          <p><strong>Čuvanje podataka:</strong> Osobne podatke čuvamo onoliko dugo koliko je potrebno za odgovor na vaš upit i daljnju komunikaciju, odnosno koliko to zahtijevaju primjenjivi zakonski propisi.</p>
+          <p><strong>Vaša prava:</strong> Imate pravo na pristup svojim osobnim podacima, ispravak netočnih ili nepotpunih podataka, brisanje podataka ako više nije potrebno za svrhu obrade, povlačenje privole ako je obrada bila temeljena na privoli te podnošenje pritužbe nadležnom tijelu za zaštitu osobnih podataka (AZOP).</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">© 2026 PetraX.hr. Sva prava pridržana. · <a href="#privatnost">Privatnost i kolačići</a></div>
+    <div class="container">© 2026 PetraX.hr. Sva prava pridržana. · <a href="#privatnost">Privatnost i kolačići</a> · <a href="privacy.html">Politika privatnosti</a></div>
   </footer>
-
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const form = new FormData(event.currentTarget);
-      const subject = "Upit s web-stranice PetraX";
-      const body = [
-        `Ime / tvrtka: ${form.get("name")}`,
-        `E-mail: ${form.get("email")}`,
-        "",
-        "Poruka:",
-        form.get("message")
-      ].join("\n");
-      window.location.href = `mailto:obrt.petrax@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  </script>
 </body>
 </html>
