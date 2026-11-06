@@ -166,6 +166,9 @@
     .about-box { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); }
     .about-box h3 { color: var(--navy); font-size: 1.7rem; margin-bottom: 16px; }
     .about-box p { color: var(--muted); margin: 0 0 14px; }
+    .privacy-content { max-width: 850px; margin: 0 auto; }
+    .privacy-content h3 { color: var(--navy); font-size: 1.2rem; margin: 24px 0 8px; }
+    .privacy-content p { color: var(--muted); margin: 0 0 14px; }
     .contact-block { text-align: center; max-width: 760px; margin: 0 auto; }
     .contact-block p { color: #d6e7ff; margin: 0 0 18px; }
     .contact-form { display: grid; gap: 14px; max-width: 620px; margin: 28px auto; text-align: left; }
@@ -182,6 +185,7 @@
     .contact-form input::placeholder, .contact-form textarea::placeholder { color: #c4d2e3; }
     .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .footer { background: #081827; color: #aac0d9; padding: 28px 0; text-align: center; font-size: 0.94rem; }
+    .footer a { text-decoration: underline; text-underline-offset: 3px; }
 
     @keyframes rise-in {
       from { opacity: 0; transform: translateY(18px); }
@@ -319,10 +323,34 @@
         </div>
       </div>
     </section>
+
+    <section class="section section-light" id="privatnost">
+      <div class="container">
+        <div class="heading">
+          <p class="eyebrow">Informacije</p>
+          <h2>Privatnost i kolačići</h2>
+        </div>
+        <div class="privacy-content">
+          <h3>Kolačići</h3>
+          <p>Prema trenutačnoj izvedbi, ova web-stranica ne koristi kolačiće za analitiku, oglašavanje ni praćenje posjetitelja. Ne pohranjuje podatke koje unesete u kontaktni obrazac.</p>
+
+          <h3>Kontaktni obrazac</h3>
+          <p>Obrazac priprema poruku u vašoj aplikaciji za e-poštu. Podaci se ne šalju nama dok sami ne pošaljete e-mail. Nakon slanja, poruka i podaci koje ste naveli obrađuju se radi odgovora na vaš upit.</p>
+
+          <h3>Vanjske usluge</h3>
+          <p>Stranica učitava pozadinsku fotografiju s Unsplasha. Klikom na WhatsApp poveznicu otvara se usluga WhatsAppa. Te usluge mogu obrađivati tehničke podatke, primjerice IP adresu ili podatke o zahtjevu, prema vlastitim pravilima privatnosti. Ova stranica ne upravlja njihovom obradom podataka.</p>
+
+          <h3>Tehnički podaci</h3>
+          <p>Pružatelj usluge hostinga može obrađivati tehničke podatke potrebne za isporuku i sigurnost web-stranice, u skladu sa svojim pravilima. Ova stranica nema pristup tim podacima putem kontaktne forme ili analitičkih alata.</p>
+
+          <p>Ove se informacije odnose na trenutačnu verziju stranice. Ako se dodaju alati za analitiku, oglašavanje ili druge usluge koje koriste kolačiće, obavijest će se ažurirati.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="container">© 2026 PetraX.hr. Sva prava pridržana.</div>
+    <div class="container">© 2026 PetraX.hr. Sva prava pridržana. · <a href="#privatnost">Privatnost i kolačići</a></div>
   </footer>
 
   <script>
